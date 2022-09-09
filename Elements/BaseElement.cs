@@ -6,21 +6,25 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using HW_2_IntreductionInSelenium.Utils;
-using SeleniumExtras.WaitHelpers; 
+using SeleniumExtras.WaitHelpers;
+using AngleSharp.Css;
 
 namespace HW_2_IntreductionInSelenium.Elements
 {
-    public class BaseElement
+    public abstract class BaseElement
     {
-        private By locator; 
-        public BaseElement(By locator)
+        private By locator;
+        private String elementName; 
+        public BaseElement(By locator, String elementName)
         {
-            this.locator = locator; 
+            this.locator = locator;
+            this.elementName = elementName; 
         }
         public Boolean isExist()
         {
             try
             {
+                Logger.getLogger().Info($"Check element  existance");
                 WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
                 wait.Until(ExpectedConditions.ElementExists(locator));
                 return true;
@@ -35,6 +39,7 @@ namespace HW_2_IntreductionInSelenium.Elements
         {
             try
             {
+                Logger.getLogger().Info($"Check element ->'{elementName}' is clickable");
                 WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
                 wait.Until(ExpectedConditions.ElementToBeClickable(locator));
                 return true;
@@ -48,6 +53,7 @@ namespace HW_2_IntreductionInSelenium.Elements
         {
             try
             {
+                Logger.getLogger().Info($"Check element ->'{elementName}' visability of element");
                 WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
                 wait.Until(ExpectedConditions.ElementIsVisible(locator));
                 return true;
@@ -61,6 +67,7 @@ namespace HW_2_IntreductionInSelenium.Elements
         {
             try
             {
+                Logger.getLogger().Info($"Click on element ->'{elementName}'");
                 WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
                 wait.Until(ExpectedConditions.ElementIsVisible(locator)).Click();
             }
@@ -72,6 +79,7 @@ namespace HW_2_IntreductionInSelenium.Elements
         {
             try
             {
+                Logger.getLogger().Info($"Get text from element ->'{elementName}'");
                 WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
                 return wait.Until(ExpectedConditions.ElementIsVisible(locator)).Text;
             }
@@ -82,11 +90,13 @@ namespace HW_2_IntreductionInSelenium.Elements
         }
         public void sendKeys(String item)
         {
+            Logger.getLogger().Info($"Send keys to element ->'{elementName}'");
             WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
-            wait.Until(ExpectedConditions.ElementIsVisible(locator)).SendKeys(item); 
+            wait.Until(ExpectedConditions.ElementIsVisible(locator)).SendKeys(item);
         }
         public String getAttribute(String value)
         {
+            Logger.getLogger().Info($"Get element ->'{elementName}' attribute");
             WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
             return wait.Until(ExpectedConditions.ElementExists(locator)).GetAttribute(value); 
         }

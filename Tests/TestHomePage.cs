@@ -13,12 +13,9 @@ namespace HW_2_IntreductionInSelenium.Tests
     {
         private readonly String BASE_URL = @"https://avic.ua/";
         protected HomePage homePage;
-        private IWebDriver _driver; 
         [SetUp]
         public void SetUp()
         {
-            _driver = Driver.getInstance();
-            _driver.Manage().Window.Maximize();
             _driver.Navigate().GoToUrl(BASE_URL);
             homePage = new HomePage(); 
         }
@@ -32,8 +29,6 @@ namespace HW_2_IntreductionInSelenium.Tests
         [TearDown]
         public void TearDown()
         {
-            _driver.Quit();
-            Driver.Instance = null; 
         }
 
     }

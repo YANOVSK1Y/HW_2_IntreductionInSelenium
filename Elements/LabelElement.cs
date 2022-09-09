@@ -9,7 +9,7 @@ namespace HW_2_IntreductionInSelenium.Elements
 {
     public class LabelElement : BaseElement
     {
-        public LabelElement(By locator) : base(locator)
+        public LabelElement(By locator, String elementName) : base(locator, elementName)
         {
         }
     }

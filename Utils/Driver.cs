@@ -17,6 +17,7 @@ namespace HW_2_IntreductionInSelenium.Utils
         {
             if (Instance == null)
             {
+                Logger.getLogger().Info("Creating driver"); 
                 Instance = new ChromeDriver(GetGoogleChromeDriverPath());
             }
             return Instance; 

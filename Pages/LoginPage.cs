@@ -11,14 +11,15 @@ using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace HW_2_IntreductionInSelenium.Pages
 {
-    public class LoginPage : BasePage
+    public class LoginPage
     {
-        private LabelElement labelLogin = new LabelElement(By.XPath("//div[contains(@class, 'sign-holder')]"));
-        private LabelElement inputPhone = new LabelElement(By.XPath("//input[@name='login']"));
-        private LabelElement inputPassword = new LabelElement(By.XPath("//input[@name='password']"));
+        private LabelElement labelLogin = new LabelElement(By.XPath("//div[contains(@class, 'sign-holder')]"), "login label");
+        private LabelElement inputPhone = new LabelElement(By.XPath("//input[@name='login']"), "input phone field");
+        private LabelElement inputPassword = new LabelElement(By.XPath("//input[@name='password']"), "input pass field");
         protected IWebDriver driver;
         public LoginPage()
         {
+            Logger.getLogger().Info("Creatingg Login Page instance"); 
             this.driver = Driver.getInstance();
         }
         public Boolean CheckLoginPageExistance() => labelLogin.isExist();

@@ -9,6 +9,7 @@ using AngleSharp.Text;
 using HW_2_IntreductionInSelenium.Pages;
 using NLog;
 using NUnit.Framework;
+using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
 
 namespace HW_2_IntreductionInSelenium.Tests
@@ -16,7 +17,6 @@ namespace HW_2_IntreductionInSelenium.Tests
     public class TestLoginPage : BaseTest
     {
         private readonly String BASE_URL = @"https://avic.ua/";
-        private IWebDriver _driver;
         private HomePage homePage;
         private LoginPage loginPage;
 
@@ -25,8 +25,6 @@ namespace HW_2_IntreductionInSelenium.Tests
 
         [SetUp]
         public void SetUp() {
-            _driver = Driver.getInstance();
-            _driver.Manage().Window.Maximize();
             _driver.Navigate().GoToUrl(BASE_URL);
             homePage = new HomePage();
             homePage.openLoginPage();
@@ -46,8 +44,6 @@ namespace HW_2_IntreductionInSelenium.Tests
         [TearDown]
         public void TearDown()
         {
-            _driver.Quit();
-            Driver.Instance = null;
         }
     }
 }

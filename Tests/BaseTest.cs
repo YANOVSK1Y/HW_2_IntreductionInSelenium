@@ -7,26 +7,26 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using WebDriverManager.DriverConfigs.Impl;
-using HW_2_IntreductionInSelenium.Utils; 
+using HW_2_IntreductionInSelenium.Utils;
+using OpenQA.Selenium.DevTools.V102.DOM;
 
 namespace HW_2_IntreductionInSelenium.Tests
 {
     [TestFixture]
     public class BaseTest
     {
-        /*protected IWebDriver driver; 
-        [OneTimeSetUp]
+        protected IWebDriver _driver; 
+        [SetUp]
         public void OneTimeSetUp() 
         {
-            driver = Driver.getInstance();
-            driver.Manage().Window.Maximize();
+            _driver = Driver.getInstance();
+            _driver.Manage().Window.Maximize();
         }
-
-        [OneTimeTearDown]
+        [TearDown]
         public void OneTimeTearDown()
         {
-            driver.Quit();
+            _driver.Quit();
             Driver.Instance = null;
-        }*/
+        }
     }
 }
