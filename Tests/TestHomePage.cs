@@ -23,7 +23,11 @@ namespace HW_2_IntreductionInSelenium.Tests
         [Test]
         public void TestHomePageExistance()
         {
-            Assert.True(homePage.CheckHomePageExistance());
+            Logger.getLogger().Info("TestHomePageExistance Test case START");
+
+            Assert.True(homePage.CheckPageExistance());
+
+            Logger.getLogger().Info("TestHomePageExistance Test case END");
         }
 
         [TearDown]

@@ -22,7 +22,7 @@ namespace HW_2_IntreductionInSelenium.Pages
             Logger.getLogger().Info("Creatingg Login Page instance"); 
             this.driver = Driver.getInstance();
         }
-        public Boolean CheckLoginPageExistance() => labelLogin.isExist();
+        public Boolean CheckPageExistance() => labelLogin.isExist();
 
         public Boolean EnterPhone(String phone)
         {

@@ -7,7 +7,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AngleSharp.Text;
 using HW_2_IntreductionInSelenium.Pages;
-using NLog;
 using NUnit.Framework;
 using NUnit.Framework.Constraints;
 using OpenQA.Selenium;
@@ -31,15 +30,23 @@ namespace HW_2_IntreductionInSelenium.Tests
             loginPage = new LoginPage();
         }
         [Test]
-        public void TestLoginPageEnterValueToField()
+        public void TestLoginPageEnterValueToFields()
         {
-            Assert.True(loginPage.CheckLoginPageExistance());
+            Logger.getLogger().Info("TestLoginPageEnterValueToFields Test case START");
+
+            Assert.True(loginPage.CheckPageExistance());
 
             loginPage.EnterPhone(_phone);
             loginPage.EnterPassword(_password);
 
-            Assert.AreEqual(_phone, String.Join("", loginPage.GetPhone("value").Where(s => s.IsDigit()).Select(s=>s).Skip(2).ToArray()), "Phones is not the same"); ;
+            Assert.AreEqual(_phone, String.Join("", loginPage.GetPhone("value").Where(s => s.IsDigit()).Select(s=>s).Skip(2).ToArray()), "Phones is not the same");
+            Logger.getLogger().Info("Phone is same as sended");
+
             Assert.AreEqual(_password, loginPage.GetPassword("value"), "Password is not the same");
+            Logger.getLogger().Info("Password is same as sended");
+
+
+            Logger.getLogger().Info("TestLoginPageEnterValueToFields Test case END");
         }
         [TearDown]
         public void TearDown()

@@ -27,6 +27,7 @@ namespace HW_2_IntreductionInSelenium.Tests
         {
             _driver.Quit();
             Driver.Instance = null;
+            Logger.getLogger().Info("Close driver."); 
         }
     }
 }

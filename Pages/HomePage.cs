@@ -22,7 +22,7 @@ namespace HW_2_IntreductionInSelenium.Pages
             Logger.getLogger().Info("Creatingg Home Page instance");
             this.driver = Driver.getInstance();
         }
-        public Boolean CheckHomePageExistance()
+        public Boolean CheckPageExistance()
         {
             return homeMainLocator.isExist(); 
         }

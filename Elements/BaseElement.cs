@@ -24,7 +24,7 @@ namespace HW_2_IntreductionInSelenium.Elements
         {
             try
             {
-                Logger.getLogger().Info($"Check element  existance");
+                Logger.getLogger().Info($"Check element ->'{elementName}'  existance");
                 WebDriverWait wait = new WebDriverWait(Driver.getInstance(), TimeSpan.FromSeconds(15));
                 wait.Until(ExpectedConditions.ElementExists(locator));
                 return true;
