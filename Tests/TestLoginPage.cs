@@ -13,6 +13,7 @@ using OpenQA.Selenium;
 
 namespace HW_2_IntreductionInSelenium.Tests
 {
+    [TestFixture]
     public class TestLoginPage : BaseTest
     {
         private readonly String BASE_URL = @"https://avic.ua/";

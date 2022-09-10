@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace HW_2_IntreductionInSelenium.Tests
 {
+    [TestFixture]
     public class TestHomePage : BaseTest
     {
         private readonly String BASE_URL = @"https://avic.ua/";
