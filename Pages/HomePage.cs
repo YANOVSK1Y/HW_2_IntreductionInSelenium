@@ -1,13 +1,5 @@
-﻿using Aquality.Selenium.Elements;
-using NLog.LayoutRenderers;
-using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
 using HW_2_IntreductionInSelenium.Elements;
-
 
 namespace HW_2_IntreductionInSelenium.Pages
 {

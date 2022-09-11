@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using HW_2_IntreductionInSelenium.Utils;
 using SeleniumExtras.WaitHelpers;
-using AngleSharp.Css;
 
 namespace HW_2_IntreductionInSelenium.Elements
 {

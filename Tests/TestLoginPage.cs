@@ -1,15 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Runtime.ConstrainedExecution;
-using System.Text;
-using System.Threading.Tasks;
-using AngleSharp.Text;
+﻿using AngleSharp.Text;
 using HW_2_IntreductionInSelenium.Pages;
 using NUnit.Framework;
-using NUnit.Framework.Constraints;
-using OpenQA.Selenium;
 
 namespace HW_2_IntreductionInSelenium.Tests
 {

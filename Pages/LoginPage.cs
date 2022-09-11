@@ -1,13 +1,5 @@
-﻿using SeleniumExtras.PageObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using Aquality.Selenium.Elements.Interfaces;
+﻿using OpenQA.Selenium;
 using HW_2_IntreductionInSelenium.Elements;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel;
 
 namespace HW_2_IntreductionInSelenium.Pages
 {
