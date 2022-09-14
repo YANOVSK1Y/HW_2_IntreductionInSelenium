@@ -1,12 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Remote;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HW_2_IntreductionInSelenium.Utils
 {
@@ -23,6 +17,24 @@ namespace HW_2_IntreductionInSelenium.Utils
             {
                 options.AddArgument(option.ToString()); 
             }
+            switch (chromeSettings.GetValue("pageLoadStrategy").ToString())
+            {
+                case "normal":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Normal;
+                    break;
+                case "default":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Default;
+                    break;
+                case "none":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.None;
+                    break;
+                case "eager":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Eager;
+                    break;
+                default:
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Normal;
+                    break;
+            }
             return options; 
         }
         public static FirefoxOptions getFirefoxOptions()
@@ -30,11 +42,29 @@ namespace HW_2_IntreductionInSelenium.Utils
             FirefoxOptions options = new FirefoxOptions();
             JObject settings = FileReader.ReadFile(@"Resources/driverSettings.json");
             var driverSettings = JObject.Parse(settings.GetValue("driverSettings").ToString());
-            var chromeSettings = JObject.Parse(driverSettings.GetValue("firefox").ToString());
+            var firefoxSettings = JObject.Parse(driverSettings.GetValue("firefox").ToString());
 
-            foreach (var option in chromeSettings.GetValue("startArguments").ToArray())
+            foreach (var option in firefoxSettings.GetValue("startArguments").ToArray())
             {
                 options.AddArgument(option.ToString());
+            }
+            switch (firefoxSettings.GetValue("pageLoadStrategy").ToString())
+            {
+                case "normal":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Normal;
+                    break;
+                case "default":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Default;
+                    break;
+                case "none":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.None;
+                    break;
+                case "eager":
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Eager;
+                    break;
+                default:
+                    options.PageLoadStrategy = OpenQA.Selenium.PageLoadStrategy.Normal;
+                    break;
             }
             return options;
         }

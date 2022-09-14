@@ -11,7 +11,7 @@
         "--disable-gpu",
         "--disable-dev-shm-usage"
       ],
-      "pageLoadStrategy": "Normal"
+      "pageLoadStrategy": "normal"
     },
 
     "firefox": {
@@ -22,7 +22,7 @@
         "--disable-gpu",
         "--disable-dev-shm-usage"
       ],
-      "pageLoadStrategy": "Normal"
+      "pageLoadStrategy": "normal"
     }
 
   }
