@@ -9,6 +9,7 @@ using OpenQA.Selenium.Chrome;
 using WebDriverManager.DriverConfigs.Impl;
 using HW_2_IntreductionInSelenium.Utils;
 using OpenQA.Selenium.DevTools.V102.DOM;
+using WebDriverManager;
 
 namespace HW_2_IntreductionInSelenium.Tests
 {
@@ -24,9 +25,7 @@ namespace HW_2_IntreductionInSelenium.Tests
         [TearDown]
         public void OneTimeTearDown()
         {
-            _driver.Quit();
-            Driver.Instance = null;
-            Logger.getLogger().Info("Close driver."); 
+            Driver.Destroy();
         }
     }
 }

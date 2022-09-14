@@ -15,7 +15,8 @@ namespace HW_2_IntreductionInSelenium.Tests
         private readonly String _password = "password!@#$%12345";
 
         [SetUp]
-        public void SetUp() {
+        public void SetUp()
+        {
             _driver.Navigate().GoToUrl(BASE_URL);
             homePage = new HomePage();
             homePage.openLoginPage();
@@ -31,7 +32,7 @@ namespace HW_2_IntreductionInSelenium.Tests
             loginPage.EnterPhone(_phone);
             loginPage.EnterPassword(_password);
 
-            Assert.AreEqual(_phone, String.Join("", loginPage.GetPhone("value").Where(s => s.IsDigit()).Select(s=>s).Skip(2).ToArray()), "Phones is not the same");
+            Assert.AreEqual(_phone, String.Join("", loginPage.GetPhone("value").Where(s => s.IsDigit()).Select(s => s).Skip(2).ToArray()), "Phones is not the same");
             Logger.getLogger().Info("Phone is same as sended");
 
             Assert.AreEqual(_password, loginPage.GetPassword("value"), "Password is not the same");
@@ -39,10 +40,6 @@ namespace HW_2_IntreductionInSelenium.Tests
 
 
             Logger.getLogger().Info("TestLoginPageEnterValueToFields Test case END");
-        }
-        [TearDown]
-        public void TearDown()
-        {
         }
     }
 }

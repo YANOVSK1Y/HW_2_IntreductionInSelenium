@@ -1,6 +1,6 @@
 ﻿{
   "browser": "chrome",
-  "remote": true,
+  "remote": false,
 
   "driverSettings": {
     "chrome": {

@@ -25,11 +25,6 @@ namespace HW_2_IntreductionInSelenium.Tests
             Logger.getLogger().Info("TestHomePageExistance Test case END");
         }
 
-        [TearDown]
-        public void TearDown()
-        {
-            Driver.Destroy(); 
-        }
 
     }
 }
