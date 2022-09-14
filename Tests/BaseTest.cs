@@ -20,7 +20,6 @@ namespace HW_2_IntreductionInSelenium.Tests
         public void OneTimeSetUp() 
         {
             _driver = Driver.getInstance();
-            _driver.Manage().Window.Maximize();
         }
         [TearDown]
         public void OneTimeTearDown()

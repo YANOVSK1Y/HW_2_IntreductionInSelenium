@@ -1,3 +1,29 @@
 ﻿{
-  "browser": "firefox"
+  "browser": "chrome",
+  "remote": true,
+
+  "driverSettings": {
+    "chrome": {
+      "startArguments": [
+        "window-size=1600,900",
+        "--no-sandbox",
+        "--disable-popup-blocking",
+        "--disable-gpu",
+        "--disable-dev-shm-usage"
+      ],
+      "pageLoadStrategy": "Normal"
+    },
+
+    "firefox": {
+      "startArguments": [
+        "window-size=1600,900",
+        "--no-sandbox",
+        "--disable-popup-blocking",
+        "--disable-gpu",
+        "--disable-dev-shm-usage"
+      ],
+      "pageLoadStrategy": "Normal"
+    }
+
+  }
 }

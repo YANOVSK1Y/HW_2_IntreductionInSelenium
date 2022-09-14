@@ -28,6 +28,7 @@ namespace HW_2_IntreductionInSelenium.Tests
         [TearDown]
         public void TearDown()
         {
+            Driver.Destroy(); 
         }
 
     }
